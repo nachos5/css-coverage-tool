@@ -51,13 +51,7 @@ const stylesRule = {
     'sass-loader',
   ],
 };
-const filesRule = {
-  test: /\.(eot|otf|png|svg|jpg|ttf|woff|woff2)(\?v=[0-9.]+)?$/,
-  loader: dev
-    ? 'file-loader?name=[name].[ext]'
-    : 'file-loader?name=[name].[hash].[ext]',
-};
-const rules = [jsRule, tsRule, stylesRule, filesRule];
+const rules = [jsRule, tsRule, stylesRule];
 
 const optimization = {
   minimize: !dev,

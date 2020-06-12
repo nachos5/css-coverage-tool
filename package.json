@@ -10,6 +10,7 @@
   "author": "Guðmundur Óli Norland - nachos5",
   "license": "ISC",
   "dependencies": {
+    "@types/puppeteer": "^3.0.0",
     "dotenv": "^8.2.0",
     "puppeteer": "^3.3.0"
   },

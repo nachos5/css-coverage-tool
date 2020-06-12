@@ -9,12 +9,13 @@ const {
   optimization,
 } = require('./webpack.config.common');
 
+entry.css = './dist/all.css';
+
 const output = {
-  path: resolve('dist'),
-  filename: '[name].[contenthash].js',
+  path: resolve('dist/prod'),
+  filename: '[name].js',
   chunkFilename: '[id].[contenthash].js',
-  // put here your public url
-  publicPath: resolve('dist'),
+  publicPath: resolve('dist/prod'),
 };
 
 const bundleTrackerPlugin = new BundleTracker({
@@ -34,6 +35,12 @@ const resolve_obj = {
 };
 
 const config = {
+  target: 'node',
+  node: {
+    __dirname: false,
+    __filename: false,
+  },
+  name: 'css-coverage-tool',
   entry,
   output,
   module: {
